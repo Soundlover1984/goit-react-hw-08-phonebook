@@ -5,7 +5,7 @@ import { ButtonForm } from 'components/ButtonForm/ButtonForm';
 import { MdPersonAddAlt } from 'react-icons/md';
 import { Label, Form } from './ContactForm.styled';
 import { InputItem } from 'components/InputItem/InputItem';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contactsOperations';
 import Notiflix from 'notiflix';
 import { selectContacts } from 'redux/selectors';
 import { useSelector } from 'react-redux/es/hooks/useSelector';

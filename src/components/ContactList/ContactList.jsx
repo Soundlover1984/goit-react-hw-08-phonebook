@@ -1,6 +1,6 @@
 import { List } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { deleteContact, fetchContacts } from 'redux/operations';
+import { deleteContact, fetchContacts } from 'redux/contactsOperations';
 import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectFilter } from 'redux/selectors';
