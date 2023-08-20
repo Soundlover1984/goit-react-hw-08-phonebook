@@ -5,6 +5,7 @@ import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectFilter } from 'redux/selectors';
 import { useEffect } from 'react';
+import { notifySettings } from 'utils/notifySettings';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export const ContactList = () => {
     );
 
     if (query && !filteredContacts.length) {
-      Notiflix.Notify.warning('No contacts matching your request');
+      Notiflix.Notify.warning('No contacts matching your request', notifySettings);
       return [];
     }
     return filteredContacts;
@@ -32,7 +33,7 @@ export const ContactList = () => {
 
   const handleDeleteContact = (id, name) => {
     dispatch(deleteContact(id));
-    Notiflix.Notify.info(`${name} was successfully deleted from your contacts`);
+    Notiflix.Notify.info(`${name} was successfully deleted from your contacts`, notifySettings);
   };
 
   return (

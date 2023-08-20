@@ -9,6 +9,7 @@ import { addContact } from 'redux/contactsOperations';
 import Notiflix from 'notiflix';
 import { selectContacts } from 'redux/selectors';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { notifySettings } from 'utils/notifySettings';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -38,11 +39,11 @@ export const ContactForm = () => {
     );
 
     if (includesName) {
-      Notiflix.Notify.warning(`${name} is already in contacts`);
+      Notiflix.Notify.warning(`${name} is already in contacts` , notifySettings);
     } else {
       dispatch(addContact({ name, number }));
       Notiflix.Notify.success(
-        `${name} was successfully added to your contacts`
+        `${name} was successfully added to your contacts` , notifySettings
       );
     }
     resetForm();
