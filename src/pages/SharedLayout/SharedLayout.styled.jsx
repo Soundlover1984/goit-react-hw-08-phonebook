@@ -7,9 +7,13 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  padding: 24px;
+  padding: 24px 42px;
   margin-bottom: 36px;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   > nav {
     max-height: 40px;
     display: flex;
