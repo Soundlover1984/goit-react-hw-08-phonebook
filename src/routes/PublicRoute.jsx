@@ -17,6 +17,6 @@ export const PublicRoute = ({
 
 PublicRoute.propTypes = {
   children: PropTypes.element.isRequired,
-  restricted: PropTypes.bool.isRequired,
-  redirectTo: PropTypes.string.isRequired,
+  restricted: PropTypes.bool,
+  redirectTo: PropTypes.string,
 };

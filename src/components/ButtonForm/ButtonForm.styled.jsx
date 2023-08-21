@@ -6,6 +6,7 @@ export const BtnElement = styled.button`
   justify-content: center;
   border-radius: 8px;
   padding: 8px 16px;
+  height: fit-content;
   font-size: 20px;
   font-weight: bold;
   border: #5f5c59 solid 2px;
