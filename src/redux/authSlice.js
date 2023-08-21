@@ -36,9 +36,10 @@ export const authSlice = createSlice({
         );
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
-        console.log(payload);
+        // console.log(payload);
+        state.isLoading = false;
         state.error = payload;
-        if (state.error === 400) {
+        if (state.error === 400 || state.error === 401) {
           Notiflix.Notify.warning(
             'This account already exists, please log in',
             notifySettings
@@ -56,18 +57,26 @@ export const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
+        // console.log(payload);
         Notiflix.Notify.success(
-          `Welcome back, ${payload.user}!`,
+          `Welcome back, ${payload.user.name}!`,
           notifySettings
         );
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
         state.error = payload;
         state.isLoading = false;
-        Notiflix.Notify.failure(
-          'Something went wrong, please try again',
-          notifySettings
-        );
+        if (state.error === 400 || state.error === 401) {
+          Notiflix.Notify.warning(
+            "This account doesn't exist, please sign up",
+            notifySettings
+          );
+        } else {
+          Notiflix.Notify.failure(
+            'Something went wrong, please try again',
+            notifySettings
+          );
+        }
       })
       .addCase(logoutUser.pending, onPending)
       .addCase(logoutUser.fulfilled, (state, action) => {
@@ -91,12 +100,18 @@ export const authSlice = createSlice({
         state.user = payload;
         state.isLoggedIn = true;
         Notiflix.Notify.success(
-          `Welcome back, ${payload.user}!`,
+          `Welcome back, ${payload.name}!`,
           notifySettings
         );
       });
-    builder.addCase(fetchCurrentUser.rejected, state => {
-      state.isFetching = false;
+    builder.addCase(fetchCurrentUser.rejected, (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+      if (payload === 401) {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+      }
     });
   },
 });

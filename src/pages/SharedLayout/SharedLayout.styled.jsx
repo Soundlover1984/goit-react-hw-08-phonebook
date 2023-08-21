@@ -1,47 +1,43 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+  z-index: 10000;
+
+  @media screen and (min-width: 320px) {
+    width: 320px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
 `;
 
 export const Header = styled.header`
-  padding: 24px 42px;
-  margin-bottom: 36px;
+  padding: 24px 0;
+  margin-bottom: 16px;
   border-bottom: 1px solid black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  z-index: 10000;
 
-  > nav {
-    max-height: 40px;
-    display: flex;
-    gap: 24px;
+  @media screen and (min-width: 320px) {
+    flex-wrap: nowrap;
   }
-`;
 
-export const Link = styled(NavLink)`
-  padding: 8px 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  transform: scale(1);
-  box-shadow: none;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    border: 1px solid rgba(0, 128, 75, 0.7);
-    box-shadow: 0px 12px 8px 4px #0b78474d;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 36px;
   }
-  &.active {
-    color: white;
-    background-color: rgba(0, 128, 75, 0.7);
-    &:hover,
-    &:focus {
-      border: none;
-      color: inherit;
-    }
+
+  @media screen and (min-width: 1280px) {
+    padding: 24px 42px;
+    height: 60px;
   }
 `;
