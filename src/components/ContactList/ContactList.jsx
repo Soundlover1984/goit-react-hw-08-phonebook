@@ -1,11 +1,14 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import Notiflix from 'notiflix';
+import { notifySettings } from '../../utils/notifySettings';
+
 import { List } from './ContactList.styled';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { deleteContact, fetchContacts } from 'redux/contactsOperations';
-import Notiflix from 'notiflix';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
-import { useEffect } from 'react';
-import { notifySettings } from 'utils/notifySettings';
+import { fetchContacts } from 'redux/contactsOperations';
+import { selectFilter } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
+
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -25,32 +28,29 @@ export const ContactList = () => {
     );
 
     if (query && !filteredContacts.length) {
-      Notiflix.Notify.warning('No contacts matching your request', notifySettings);
+      Notiflix.Notify.warning(
+        'No contacts matching your request',
+        notifySettings
+      );
       return [];
     }
     return filteredContacts;
   };
 
-  const handleDeleteContact = (id, name) => {
-    dispatch(deleteContact(id));
-    Notiflix.Notify.info(`${name} was successfully deleted from your contacts`, notifySettings);
-  };
-
   return (
-    <List>
-      {filterContacts().map(contact => {
-        return (
-          <ContactItem
-            id={contact.id}
-            key={contact.id}
-            name={contact.name}
-            number={contact.number}
-            onDeleteBtnClick={() =>
-              handleDeleteContact(contact.id, contact.name)
-            }
-          />
-        );
-      })}
-    </List>
+    <>
+      <List>
+        {filterContacts().map(contact => {
+          return (
+            <ContactItem
+              id={contact.id}
+              key={contact.id}
+              name={contact.name}
+              number={contact.number}
+            />
+          );
+        })}
+      </List>
+    </>
   );
 };

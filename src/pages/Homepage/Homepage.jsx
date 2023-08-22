@@ -39,7 +39,7 @@ const Homepage = () => {
             <img alt="animation" width="100%" srcSet={Animation2} />
           </ImgWrapperUnlogged>
           <HomeTitleUnlogged>
-            Welcome to <PhonebookLogo /> ! <br />
+            Welcome to <PhonebookLogo />!<br />
             Keep your contacts well organized!
           </HomeTitleUnlogged>
         </ContainerUnlogged>
@@ -47,9 +47,9 @@ const Homepage = () => {
       <Footer>
         <Copyright>
           <CopyrightText>
-            Copyright
+            Copyright 
             <FaRegCopyright size={16} />
-            2023 <br /> All rights reserved
+            2023  <br />  All rights reserved
           </CopyrightText>
         </Copyright>
       </Footer>

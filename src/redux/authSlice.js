@@ -36,7 +36,6 @@ export const authSlice = createSlice({
         );
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
-        // console.log(payload);
         state.isLoading = false;
         state.error = payload;
         if (state.error === 400 || state.error === 401) {
@@ -57,7 +56,6 @@ export const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
-        // console.log(payload);
         Notiflix.Notify.success(
           `Welcome back, ${payload.user.name}!`,
           notifySettings

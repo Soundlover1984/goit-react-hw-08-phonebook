@@ -1,12 +1,11 @@
-import { FaFacebookF, FaBookReader } from 'react-icons/fa';
+import { FaBookReader } from 'react-icons/fa';
 
 import { Container } from './Logo.styled';
 
 export const PhonebookLogo = () => {
   return (
     <Container>
-      <FaFacebookF />
-      one <FaBookReader /> Book
+      Phone <FaBookReader /> Book
     </Container>
   );
 };
