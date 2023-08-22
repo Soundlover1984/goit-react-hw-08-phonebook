@@ -1,8 +1,7 @@
-import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import Notiflix from 'notiflix';
-import { notifySettings } from "utils/notifySettings";
-
+import { notifySettings } from '../utils/notifySettings';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -47,10 +46,10 @@ export const deleteContact = createAsyncThunk(
 
 export const updateContact = createAsyncThunk(
   'contacts/updateContact',
-  async ({ id, name, number}, thunkAPI) => {
+  async ({ id, name, number }, thunkAPI) => {
     try {
-      const obj = { name, number };
-      const { data } = await axios.patch(`/contacts/${id}`, obj);
+      const newData = { name, number };
+      const { data } = await axios.patch(`/contacts/${id}`, newData);
       return data;
     } catch (error) {
       Notiflix.Notify.failure(`${error.message}`, notifySettings);
