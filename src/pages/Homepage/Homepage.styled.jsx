@@ -46,12 +46,15 @@ export const ImgWrapperUnlogged = styled.div`
 
 export const HomeMain = styled.main`
   text-align: center;
+  margin-top: 130px;
 `;
 
 export const HomeTitle = styled.p`
   font-size: 20px;
   font-weight: 500;
   color: black;
+  padding-bottom: 30px;
+
 
   span {
     color: rgba(48, 205, 137, 0.787);
