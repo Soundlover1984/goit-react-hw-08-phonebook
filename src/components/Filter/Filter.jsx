@@ -1,18 +1,31 @@
-import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { filterContact } from '../../redux/filterSlice';
 import { DebounceInput } from 'react-debounce-input';
+import styled from 'styled-components';
+
 import { FilterWrapper } from './Filter.styled';
-import { Label } from 'components/ContactForm/ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { filterContact } from 'redux/filterSlice';
+import { Label } from '../ContactForm/ContactForm.styled';
 import { selectFilter } from 'redux/selectors';
 
 const FilterInput = styled(DebounceInput)`
   min-width: 50%;
+  width: 75%;
   border-radius: 8px;
-  font-size: 20px;
-  padding: 12px 16px;
-  margin-left: 16px;
+  font-size: 12px;
+  placeholder: grey;
+  padding: 8px 12px;
+  outline-color: yellow;
   box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+    padding: 12px 16px;
+    margin-left: 16px;
+  }
 `;
 
 export const Filter = () => {
@@ -22,7 +35,7 @@ export const Filter = () => {
   return (
     <FilterWrapper>
       <Label>
-        Find contacts by name
+        Find contact by name
         <FilterInput
           type="text"
           name="filter"

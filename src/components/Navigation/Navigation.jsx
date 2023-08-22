@@ -1,13 +1,26 @@
-import { NavLink } from 'components/NavLink/NavLink';
 import { useSelector } from 'react-redux';
 import { selectLogStatus } from 'redux/selectors';
+import { HomepageLink, LinkIcon, LinkText } from './Navigation.styled';
+import { FcHome, FcContacts } from 'react-icons/fc';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectLogStatus);
   return (
-    <nav>
-      <NavLink to="/" text="Homepage" />
-      {isLoggedIn && <NavLink to="/contacts" text="Contacts" />}
-    </nav>
+    <>
+      <HomepageLink to="/">
+        <LinkIcon>
+          <FcHome size={24} />
+        </LinkIcon>
+        <LinkText>Homepage</LinkText>
+      </HomepageLink>
+      {isLoggedIn && (
+        <HomepageLink to="/contacts">
+          <LinkIcon>
+            <FcContacts size={24} />
+          </LinkIcon>
+          <LinkText>Contacts</LinkText>
+        </HomepageLink>
+      )}
+    </>
   );
 };

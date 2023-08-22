@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ButtonForm } from 'components/ButtonForm/ButtonForm';
-import { MdPersonAddAlt } from 'react-icons/md';
+import { FaUserPlus } from 'react-icons/fa';
 import { Label, Form } from './ContactForm.styled';
 import { InputItem } from 'components/InputItem/InputItem';
 import { addContact } from 'redux/contactsOperations';
@@ -81,7 +81,7 @@ export const ContactForm = () => {
       </Label>
       <ButtonForm
         type="submit"
-        icon={MdPersonAddAlt}
+        icon={FaUserPlus}
         status="add"
         text="Add contact"
       />
