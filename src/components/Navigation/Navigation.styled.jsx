@@ -18,15 +18,14 @@ export const HomepageLink = styled(NavLink)`
 
   &:hover,
   &:focus {
-    /* transform: scale(1.1); */
     border: ${props =>
       props.status === 'login' || props.status === 'register'
         ? '1px solid transparent'
-        : ' 1px solid rgba(0, 128, 75, 0.7)'};
+        : ' 1px solid rgba(13, 140, 220, 0.787)'};
 
     background-color: ${props =>
       props.status === 'add'
-        ? 'rgba(0, 128, 75, 0.7)'
+        ? 'rgba(13, 140, 220, 0.787)'
         : props.status === 'login'
         ? 'rgba(71, 207, 150, 0.7)'
         : props.status === 'register'
@@ -41,7 +40,7 @@ export const HomepageLink = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: rgba(0, 128, 75, 0.7);
+    background-color: rgba(13, 140, 220, 0.787);
 
     &:hover,
     &:focus {

@@ -6,7 +6,7 @@ export const PhoneLink = styled.a`
 
   &:hover,
   &:focus {
-    color: rgba(0, 128, 75, 0.7);
+    color: rgba(13, 140, 220, 0.787);
   }
 
   & > span {
@@ -41,7 +41,7 @@ export const ListItem = styled.li`
   padding: 16px;
   border-radius: 12px;
   background-color: hsla(215, 98%, 79%, 0.1);
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  border: #5f5c59 solid 2px;
 
   @media screen and (min-width: 768px) {
     padding: 32px;
@@ -49,8 +49,6 @@ export const ListItem = styled.li`
   @media screen and (min-width: 1280px) {
     font-size: 20px;
     flex-direction: row;
-    max-width: 50vw;
-    width: 45vw;
   }
 `;
 
@@ -62,7 +60,7 @@ export const ListItemData = styled.div`
   margin: 16px;
   border-radius: 12px;
   padding: 8px 12px;
-  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  border: #5f5c59 solid 2px;
 
   @media screen and (min-width: 768px) {
   }

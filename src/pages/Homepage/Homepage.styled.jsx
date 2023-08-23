@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+
   @media screen and (min-width: 1280px) {
     flex-direction: row;
     gap: 24px;
@@ -24,7 +25,7 @@ export const ContainerUnlogged = styled.div`
     flex-direction: row;
     gap: 24px;
     padding: 0 62px;
-    align-items: flex-start;
+    align-items: center;
   }
 `;
 
@@ -57,7 +58,7 @@ export const HomeTitle = styled.p`
 
 
   span {
-    color: rgba(48, 205, 137, 0.787);
+    color: rgba(13, 140, 220, 0.787);
     margin-left: 10px;
   }
   @media screen and (min-width: 768px) {
@@ -74,7 +75,7 @@ export const HomeTitleUnlogged = styled.p`
   color: black;
 
   span {
-    color: rgba(48, 205, 137, 0.787);
+    color: rgba(13, 140, 220, 0.787);
     margin-left: 10px;
   }
   @media screen and (min-width: 768px) {
@@ -99,4 +100,8 @@ export const Footer = styled.footer`
 
 export const Copyright = styled.div``;
 
-export const CopyrightText = styled.p``;
+export const CopyrightText = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+`;

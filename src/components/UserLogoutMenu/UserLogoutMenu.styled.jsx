@@ -30,7 +30,8 @@ export const WelcomeText = styled.div`
 
   & > p {
     margin: 0;
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   @media screen and (min-width: 768px) {

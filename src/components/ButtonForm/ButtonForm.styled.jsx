@@ -11,7 +11,7 @@ export const BtnElement = styled.button`
   font-weight: bold;
   border: none;
   color: white;
-  background-color: #cab1c79d;
+  background-color: rgba(13, 140, 220, 0.787);
   box-shadow: 0px 12px 8px 4px #cab1b14d;
   transform: scale(1);
   cursor: pointer;
@@ -21,13 +21,13 @@ export const BtnElement = styled.button`
     transform: scale(1.1);
     background-color: ${props =>
       props.status === 'add'
-        ? 'rgba(0, 128, 75, 0.7)'
+        ? 'rgba(45, 196, 4, 0.7)'
         : props.status === 'login' || props.status === 'update'
-        ? 'rgba(71, 207, 150, 0.7)'
+        ? 'rgba(45, 196, 4, 0.7)'
         : props.status === 'register' || props.status === 'edit'
-        ? 'rgba(248, 220, 92, 0.7)'
+        ? 'rgba(45, 196, 4, 0.7)'
         : props.status === 'goBack'
-        ? 'rgba(0, 128, 75, 0.7)'
+        ? 'rgba(45, 196, 4, 0.7)'
         : 'rgba(202, 30, 30, 0.6)'};
     box-shadow: 0px 14px 6px 4px #cab1b98c;
   }

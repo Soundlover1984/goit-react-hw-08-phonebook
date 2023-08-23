@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BiHappyBeaming } from 'react-icons/bi';
+import { BiHappy} from 'react-icons/bi';
 import { Wrapper, WelcomeText } from './UserLogoutMenu.styled';
 import { logoutUser } from '../../redux/authOperations';
 import { selectUserName } from 'redux/selectors';
@@ -13,7 +13,7 @@ export const UserLogoutMenu = () => {
     <Wrapper>
       <WelcomeText>
         <span>
-          <BiHappyBeaming size={24} />
+          <BiHappy size={24} />
         </span>
         <p>Welcome back, {name} !</p>
       </WelcomeText>

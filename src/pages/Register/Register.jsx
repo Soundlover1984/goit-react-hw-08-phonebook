@@ -66,7 +66,7 @@ const Register = () => {
 
       <FormWrapper>
         <ImgWrapper>
-          <img alt="movie camera" width="100%" srcSet={Animation} />
+          <img alt="movie camera" width="90%" srcSet={Animation} />
         </ImgWrapper>
         <Form onSubmit={handleSubmit}>
           <InputsWrapper>

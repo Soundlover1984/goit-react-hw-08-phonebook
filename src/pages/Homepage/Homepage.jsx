@@ -28,7 +28,7 @@ const Homepage = () => {
             <img alt="animation" width="100%" srcSet={Animation} />
           </ImgWrapper>
           <HomeTitle>
-            Hey, <span>{name}</span>, let's check your <PhonebookLogo /> !{' '}
+            Hey,<span>{name}</span>, let's check your <PhonebookLogo /> !{' '}
             <br />
             Here we go!
           </HomeTitle>
@@ -40,16 +40,17 @@ const Homepage = () => {
           </ImgWrapperUnlogged>
           <HomeTitleUnlogged>
             Welcome to <PhonebookLogo />!<br />
-            Keep your contacts well organized!
+            Experience efficient contact management with our web
+            service!
           </HomeTitleUnlogged>
         </ContainerUnlogged>
       )}
       <Footer>
         <Copyright>
           <CopyrightText>
-            Copyright 
+            Copyright
             <FaRegCopyright size={16} />
-            2023  <br />  All rights reserved
+            2023 <br /> All rights reserved
           </CopyrightText>
         </Copyright>
       </Footer>

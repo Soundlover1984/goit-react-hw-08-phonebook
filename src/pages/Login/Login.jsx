@@ -60,7 +60,7 @@ const Login = () => {
 
       <FormWrapper>
         <ImgWrapper>
-          <img alt="animation" width="100%" srcSet={Animation} />
+          <img alt="animation" width="90%" srcSet={Animation} />
         </ImgWrapper>
         <Form onSubmit={handleSubmit}>
           <InputsWrapper>

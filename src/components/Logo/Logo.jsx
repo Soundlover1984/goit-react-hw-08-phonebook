@@ -1,11 +1,11 @@
-import { FaBookReader } from 'react-icons/fa';
+import { GiBookmarklet } from 'react-icons/gi';
 
 import { Container } from './Logo.styled';
 
 export const PhonebookLogo = () => {
   return (
     <Container>
-      Phone <FaBookReader /> Book
+      Phone <GiBookmarklet /> Book
     </Container>
   );
 };
