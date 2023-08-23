@@ -12,7 +12,7 @@ import {
   ListItemForm,
   ContentWrapper,
 } from './ModalForm.styled';
-import Avatar from '../../images/girl.gif';
+import Avatar from '../../images/update.gif';
 import { ButtonForm } from 'components/ButtonForm/ButtonForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateContact } from 'redux/contactsOperations';
@@ -64,7 +64,7 @@ export const ModalForm = ({ id, closeModal }) => {
     <ListItem>
       <ContentWrapper>
         <AvatarWrapper>
-          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} width="100%" alt="avatar" />
         </AvatarWrapper>
         <ListItemForm onSubmit={handleSubmit}>
           <InputWrapper>
